@@ -1,9 +1,11 @@
-package com.streaming.videostreaming.dto;
+package com.v1.videostreamingmicroservice.dto;
 
-import com.streaming.videostreaming.entity.FileMetadataEntity;
+
+import com.v1.videostreamingmicroservice.entity.FileMetadataEntity;
 
 import java.util.Arrays;
 import java.util.Objects;
+
 
 public record ChunkWithMetadata(
         FileMetadataEntity metadata,

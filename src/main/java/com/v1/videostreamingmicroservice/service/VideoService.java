@@ -1,6 +1,6 @@
-package com.streaming.videostreaming.service;
+package com.v1.videostreamingmicroservice.service;
 
-import com.streaming.videostreaming.entity.FileMetadataEntity;
+import com.v1.videostreamingmicroservice.entity.FileMetadataEntity;
 import org.springframework.web.multipart.MultipartFile;
 
 public interface VideoService {

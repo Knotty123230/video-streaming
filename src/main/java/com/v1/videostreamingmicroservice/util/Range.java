@@ -1,4 +1,4 @@
-package com.streaming.videostreaming.util;
+package com.v1.videostreamingmicroservice.util;
 
 import lombok.Builder;
 

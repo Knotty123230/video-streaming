@@ -1,14 +1,15 @@
-package com.streaming.videostreaming.controller;
+package com.v1.videostreamingmicroservice.controller;
 
-import com.streaming.videostreaming.constants.HttpConstants;
-import com.streaming.videostreaming.dto.ChunkWithMetadata;
-import com.streaming.videostreaming.dto.FileResponseDto;
-import com.streaming.videostreaming.entity.FileMetadataEntity;
-import com.streaming.videostreaming.service.ChunkService;
-import com.streaming.videostreaming.service.RangeCalculator;
-import com.streaming.videostreaming.service.VideoService;
-import com.streaming.videostreaming.util.Range;
-import com.streaming.videostreaming.util.HeadersUtil;
+
+import com.v1.videostreamingmicroservice.constants.HttpConstants;
+import com.v1.videostreamingmicroservice.dto.ChunkWithMetadata;
+import com.v1.videostreamingmicroservice.dto.FileResponseDto;
+import com.v1.videostreamingmicroservice.entity.FileMetadataEntity;
+import com.v1.videostreamingmicroservice.service.ChunkService;
+import com.v1.videostreamingmicroservice.service.RangeCalculator;
+import com.v1.videostreamingmicroservice.service.VideoService;
+import com.v1.videostreamingmicroservice.util.HeadersUtil;
+import com.v1.videostreamingmicroservice.util.Range;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,7 +31,7 @@ import static org.springframework.http.HttpHeaders.*;
 public class VideoController {
 
     private final VideoService videoService;
-    private final ChunkService service;
+    private final ChunkService chunkService;
 
     @Value("${photon.streaming.default-chunk-size}")
     public Integer defaultChunkSize;
@@ -51,7 +52,6 @@ public class VideoController {
                         .build());
     }
 
-
     @GetMapping("/{uuid}")
     public ResponseEntity<byte[]> fetchChunk(
             @RequestHeader(value = HttpHeaders.RANGE, required = false) String range,
@@ -59,7 +59,7 @@ public class VideoController {
     ) {
         log.info(range);
         Range parsedRange = RangeCalculator.parseHttpRangeString(range, defaultChunkSize);
-        ChunkWithMetadata chunkWithMetadata = service.fetchChunk(uuid, parsedRange);
+        ChunkWithMetadata chunkWithMetadata = chunkService.fetchChunk(uuid, parsedRange);
         return ResponseEntity.status(HttpStatus.PARTIAL_CONTENT)
                 .header(CONTENT_TYPE, chunkWithMetadata.metadata().getHttpContentType())
                 .header(ACCEPT_RANGES, HttpConstants.ACCEPTS_RANGES_VALUE)

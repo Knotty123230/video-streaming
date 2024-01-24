@@ -1,4 +1,5 @@
-package com.streaming.videostreaming.exception;
+package com.v1.videostreamingmicroservice.exception;
+
 public class StorageException extends RuntimeException {
 
     public StorageException(Exception ex) {

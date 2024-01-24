@@ -1,6 +1,6 @@
-package com.streaming.videostreaming.binarystorage;
+package com.v1.videostreamingmicroservice.binarystorage;
 
-import com.streaming.videostreaming.config.MinioConfig;
+import com.v1.videostreamingmicroservice.config.MinioConfig;
 import io.minio.GetObjectArgs;
 import io.minio.MinioClient;
 import io.minio.PutObjectArgs;

@@ -1,9 +1,7 @@
-package com.streaming.videostreaming.dto;
+package com.v1.videostreamingmicroservice.dto;
 
 import lombok.Builder;
 import lombok.Data;
-
-import java.util.UUID;
 
 @Builder
 @Data

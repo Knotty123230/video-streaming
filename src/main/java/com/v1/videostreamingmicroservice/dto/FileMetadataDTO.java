@@ -1,6 +1,5 @@
-package com.v1.videostreamingmicroservice.entity;
+package com.v1.videostreamingmicroservice.dto;
 
-import jakarta.persistence.Entity;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -13,8 +12,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Document(indexName = "file")
-public class FileMetadataEntityDTO {
+public class FileMetadataDTO {
     @Id
     private String id;
     @Field(type = FieldType.Text)

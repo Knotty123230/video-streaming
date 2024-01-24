@@ -1,6 +1,7 @@
-package com.streaming.videostreaming.service;
+package com.v1.videostreamingmicroservice.service;
 
-import com.streaming.videostreaming.util.Range;
+
+import com.v1.videostreamingmicroservice.util.Range;
 
 public class RangeCalculator {
     private RangeCalculator() {

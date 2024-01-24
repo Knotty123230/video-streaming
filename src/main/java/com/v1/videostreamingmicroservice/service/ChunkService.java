@@ -1,12 +1,13 @@
-package com.streaming.videostreaming.service;
+package com.v1.videostreamingmicroservice.service;
 
-import com.streaming.videostreaming.binarystorage.MinioStorageService;
-import com.streaming.videostreaming.dto.ChunkWithMetadata;
-import com.streaming.videostreaming.entity.FileMetadataEntity;
-import com.streaming.videostreaming.exception.StorageException;
-import com.streaming.videostreaming.exception.VideoNotFoundException;
-import com.streaming.videostreaming.repository.FileMetadataRepository;
-import com.streaming.videostreaming.util.Range;
+
+import com.v1.videostreamingmicroservice.binarystorage.MinioStorageService;
+import com.v1.videostreamingmicroservice.dto.ChunkWithMetadata;
+import com.v1.videostreamingmicroservice.entity.FileMetadataEntity;
+import com.v1.videostreamingmicroservice.exception.StorageException;
+import com.v1.videostreamingmicroservice.exception.VideoNotFoundException;
+import com.v1.videostreamingmicroservice.repository.FileMetadataRelationalRepository;
+import com.v1.videostreamingmicroservice.util.Range;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class ChunkService {
     private final MinioStorageService storageService;
-    private final FileMetadataRepository fileMetadataRepository;
+    private final FileMetadataRelationalRepository fileMetadataRepository;
 
     private byte[] readChunk(UUID uuid, Range range, long fileSize) {
         long startPosition = range.getRangeStart();

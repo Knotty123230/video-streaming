@@ -1,4 +1,4 @@
-package com.streaming.videostreaming.config;
+package com.v1.videostreamingmicroservice.config;
 
 import io.minio.BucketExistsArgs;
 import io.minio.MakeBucketArgs;
@@ -29,7 +29,7 @@ public class MinioConfig {
     private String minioPassword;
 
     @Bean
-    public MinioClient minioClient()  {
+    public MinioClient minioClient() {
         MinioClient client = MinioClient.builder()
                 .endpoint(minioUrl)
                 .credentials(minioUsername, minioPassword)
