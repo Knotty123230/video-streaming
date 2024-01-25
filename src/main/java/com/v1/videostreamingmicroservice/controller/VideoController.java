@@ -1,6 +1,7 @@
 package com.v1.videostreamingmicroservice.controller;
 
 
+import com.netflix.discovery.EurekaClient;
 import com.v1.videostreamingmicroservice.constants.HttpConstants;
 import com.v1.videostreamingmicroservice.dto.ChunkWithMetadata;
 import com.v1.videostreamingmicroservice.dto.FileResponseDto;
@@ -29,6 +30,8 @@ import static org.springframework.http.HttpHeaders.*;
 @RequiredArgsConstructor
 @RequestMapping("/video")
 public class VideoController {
+
+    private final EurekaClient eurekaClient;
 
     private final VideoService videoService;
     private final ChunkService chunkService;

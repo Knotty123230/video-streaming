@@ -1,7 +1,6 @@
 package com.v1.videostreamingmicroservice.service;
 
 import com.v1.videostreamingmicroservice.dto.FileMetadataDTO;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
