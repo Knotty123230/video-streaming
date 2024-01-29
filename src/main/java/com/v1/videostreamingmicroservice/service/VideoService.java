@@ -1,10 +1,10 @@
 package com.v1.videostreamingmicroservice.service;
 
-import com.v1.videostreamingmicroservice.entity.FileMetadataEntity;
+import com.v1.videostreamingmicroservice.dto.FileMetadataDTO;
 import org.springframework.web.multipart.MultipartFile;
 
 public interface VideoService {
 
-    FileMetadataEntity save(MultipartFile video, String name, String description);
+    FileMetadataDTO save(MultipartFile video, String name, String description);
 
 }

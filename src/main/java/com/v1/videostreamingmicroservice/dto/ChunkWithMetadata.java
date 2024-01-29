@@ -1,14 +1,13 @@
 package com.v1.videostreamingmicroservice.dto;
 
 
-import com.v1.videostreamingmicroservice.entity.FileMetadataEntity;
 
 import java.util.Arrays;
 import java.util.Objects;
 
 
 public record ChunkWithMetadata(
-        FileMetadataEntity metadata,
+        FileMetadataDTO metadata,
         byte[] chunk
 ) {
     @Override

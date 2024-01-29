@@ -6,9 +6,9 @@ spring:
       max-file-size: 10000MB
       max-request-size: 10000MB
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://db/authentication
     username: postgres
-    password: postgres
+    password: pass
   jpa:
     hibernate:
       ddl-auto: update

@@ -1,11 +1,10 @@
 package com.v1.videostreamingmicroservice.controller;
 
 
-import com.netflix.discovery.EurekaClient;
 import com.v1.videostreamingmicroservice.constants.HttpConstants;
 import com.v1.videostreamingmicroservice.dto.ChunkWithMetadata;
+import com.v1.videostreamingmicroservice.dto.FileMetadataDTO;
 import com.v1.videostreamingmicroservice.dto.FileResponseDto;
-import com.v1.videostreamingmicroservice.entity.FileMetadataEntity;
 import com.v1.videostreamingmicroservice.service.ChunkService;
 import com.v1.videostreamingmicroservice.service.RangeCalculator;
 import com.v1.videostreamingmicroservice.service.VideoService;
@@ -31,7 +30,6 @@ import static org.springframework.http.HttpHeaders.*;
 @RequestMapping("/video")
 public class VideoController {
 
-    private final EurekaClient eurekaClient;
 
     private final VideoService videoService;
     private final ChunkService chunkService;
@@ -45,13 +43,13 @@ public class VideoController {
             @RequestParam("name") String name,
             @RequestParam("description") String description
     ) {
-        FileMetadataEntity fileMetadata = videoService.save(file, name, description);
+        FileMetadataDTO fileMetadata = videoService.save(file, name, description);
         return ResponseEntity.ok(
                 FileResponseDto.builder()
-                        .uuid(fileMetadata.getId())
-                        .nameFile(fileMetadata.getName())
-                        .description(fileMetadata.getDescription())
-                        .name(fileMetadata.getHeader())
+                        .uuid(fileMetadata.id())
+                        .nameFile(fileMetadata.name())
+                        .description(fileMetadata.description())
+                        .name(fileMetadata.header())
                         .build());
     }
 
@@ -64,12 +62,12 @@ public class VideoController {
         Range parsedRange = RangeCalculator.parseHttpRangeString(range, defaultChunkSize);
         ChunkWithMetadata chunkWithMetadata = chunkService.fetchChunk(uuid, parsedRange);
         return ResponseEntity.status(HttpStatus.PARTIAL_CONTENT)
-                .header(CONTENT_TYPE, chunkWithMetadata.metadata().getHttpContentType())
+                .header(CONTENT_TYPE, chunkWithMetadata.metadata().httpContentType())
                 .header(ACCEPT_RANGES, HttpConstants.ACCEPTS_RANGES_VALUE)
                 .header(CONTENT_LENGTH,
-                        HeadersUtil.calculateContentLengthHeader(parsedRange, chunkWithMetadata.metadata().getSize()))
+                        HeadersUtil.calculateContentLengthHeader(parsedRange, chunkWithMetadata.metadata().size()))
                 .header(CONTENT_RANGE,
-                        HeadersUtil.constructContentRangeHeader(parsedRange, chunkWithMetadata.metadata().getSize()))
+                        HeadersUtil.constructContentRangeHeader(parsedRange, chunkWithMetadata.metadata().size()))
                 .body(chunkWithMetadata.chunk());
     }
 

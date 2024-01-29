@@ -15,8 +15,8 @@ public class KafkaSender implements Sender {
 
 
     @Override
-    public FileMetadataDTO send(FileMetadataDTO fileMetadataDTO) {
-        kafkaTemplate.send(sendClientTopic, fileMetadataDTO.getId(), fileMetadataDTO);
+    public <T> T send(T fileMetadataDTO, String uuid) {
+        kafkaTemplate.send(sendClientTopic,uuid, (FileMetadataDTO) fileMetadataDTO);
         return fileMetadataDTO;
     }
 }
