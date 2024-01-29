@@ -1,1 +1,5 @@
 rootProject.name = 'VideoStreamingMicroservice'
+includeBuild('api-gateway')
+includeBuild('elastic-search-video')
+includeBuild('eureka-server')
+includeBuild('VideoStreamingMicroservice')

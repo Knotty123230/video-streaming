@@ -2,8 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FileMetadataStorage" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/VideoStreamingMicroservice" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/api-gateway" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/authorization-server-api" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/elastic-search-video" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/eureka-server" vcs="Git" />
   </component>
