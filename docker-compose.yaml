@@ -40,31 +40,61 @@ services:
           cpus: '2.0'
         reservations:
           cpus: '1.0'
-  minio:
-    platform: linux/x86_64
-    image: minio/minio:RELEASE.2023-06-29T05-12-28Z.fips
+#  minio:
+#    platform: linux/x86_64
+#    image: minio/minio:RELEASE.2023-06-29T05-12-28Z.fips
+#    ports:
+#      - "9000:9000"
+#      - "9001:9001"
+#    volumes:
+#      - minio_storage:/data
+#    environment:
+#      MINIO_ROOT_USER: admin
+#      MINIO_ROOT_PASSWORD: adminpass
+#    command: server --console-address ":9001" /data
+  client-backend:
+    image: spring-boot-authorize:latest
+    build:
+      context: .
     ports:
-      - "9000:9000"
-      - "9001:9001"
-    volumes:
-      - minio_storage:/data
+      - "8181:8585"
+    depends_on:
+      - service-db
     environment:
-      MINIO_ROOT_USER: admin
-      MINIO_ROOT_PASSWORD: adminpass
-    command: server --console-address ":9001" /data
-  db:
+      - SERVER_PORT=8585
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://service-db/authorization
+      - SPRING_DATASOURCE_USERNAME=username
+      - SPRING_DATASOURCE_PASSWORD=password
+
+  service-db:
     platform: linux/x86_64
-    image: postgres:15.3
+    image: postgres:14.7-alpine
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: authorization
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready", "-d", "clients_database" ]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    ports:
+      - "15432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+      - ./sql/create_table.sql:/docker-entrypoint-initdb.d/create_table.sql
+
+  pgadmin:
+    platform: linux/x86_64
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4:7
     restart: always
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=pass
-      - POSTGRES_DB=postgres
-      - POSTGRES_DB=authentication
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
     ports:
-      - '5432:5432'
-    volumes:
-      - db:/var/lib/postgresql/data
+      - "5050:80"
   zookeeper:
     platform: linux/x86_64
     image: confluentinc/cp-zookeeper:6.2.4
@@ -117,9 +147,11 @@ services:
 
 
 volumes:
+  db-data: {}
   minio_storage: { }
   db:
     driver: local
+
 
 networks:
   elastic:
