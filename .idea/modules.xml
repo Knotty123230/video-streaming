@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FileMetadataStorage.main.iml" filepath="$PROJECT_DIR$/.idea/modules/FileMetadataStorage.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/VideoStreamingMicroservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/VideoStreamingMicroservice.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/elastic-search-video.main.iml" filepath="$PROJECT_DIR$/.idea/modules/elastic-search-video.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/search-microservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/search-microservice.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/search-microservice.test.iml" filepath="$PROJECT_DIR$/.idea/modules/search-microservice.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/video-database-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/video-database-api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/video-database-api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/video-database-api.test.iml" />
+    </modules>
+  </component>
+</project>

@@ -40,18 +40,18 @@ services:
           cpus: '2.0'
         reservations:
           cpus: '1.0'
-#  minio:
-#    platform: linux/x86_64
-#    image: minio/minio:RELEASE.2023-06-29T05-12-28Z.fips
-#    ports:
-#      - "9000:9000"
-#      - "9001:9001"
-#    volumes:
-#      - minio_storage:/data
-#    environment:
-#      MINIO_ROOT_USER: admin
-#      MINIO_ROOT_PASSWORD: adminpass
-#    command: server --console-address ":9001" /data
+  minio:
+    platform: linux/x86_64
+    image: minio/minio:RELEASE.2023-06-29T05-12-28Z.fips
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_storage:/data
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: adminpass
+    command: server --console-address ":9001" /data
   client-backend:
     image: spring-boot-authorize:latest
     build:
@@ -116,7 +116,7 @@ services:
       zookeeper:
         condition: service_healthy
     ports:
-      - 29092:29092
+      - "29092:29092"
     healthcheck:
       test: [ "CMD", "nc", "-vz", "localhost", "9092" ]
       interval: 10s

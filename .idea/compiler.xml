@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.30/f195ee86e6c896ea47a1d39defbe20eb59cd149d/lombok-1.18.30.jar" />
+        </processorPath>
+        <module name="elastic-search-video.main" />
+        <module name="com.example.VideoStreamingMicroservice.main" />
+        <module name="VideoStreamingMicroservice.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.6">
+      <module name="api-gateaway" target="17" />
+      <module name="api-gateaway.main" target="17" />
+      <module name="api-gateaway.test" target="17" />
+      <module name="authorization-api" target="17" />
+      <module name="authorization-api.main" target="17" />
+      <module name="authorization-api.test" target="17" />
+      <module name="getaway-api" target="17" />
+      <module name="getaway-api.main" target="17" />
+      <module name="getaway-api.test" target="17" />
+      <module name="notification-api" target="17" />
+      <module name="notification-api.main" target="17" />
+      <module name="notification-api.test" target="17" />
+      <module name="search-microservice" target="17" />
+      <module name="search-microservice.main" target="17" />
+      <module name="search-microservice.test" target="17" />
+      <module name="video-database-api" target="17" />
+      <module name="video-database-api.main" target="17" />
+      <module name="video-database-api.test" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

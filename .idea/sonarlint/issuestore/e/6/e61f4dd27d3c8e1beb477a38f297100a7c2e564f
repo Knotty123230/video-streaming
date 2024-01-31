@@ -1,0 +1,66 @@
+
+O
+java:S1611X"2Remove the parentheses around the "oidc" parameter(ªÀ¹š8¬¯æ¬Õ1
+T
+java:S1611_"7Remove the parentheses around the "authorize" parameter(–²ÇÁ8­æÎ¹Õ1
+]	java:S125l"<This block of commented-out lines of code should be removed.(Ðµýüÿÿÿÿ8¬øñÒÕ1
+š
+java:S1128"xRemove this unused import 'com.authorizationserverapi.authorizationserverapi.repository.AuthorizationConsentRepository'.(”µô…ùÿÿÿÿ8Å‹û¬Õ1
+“
+java:S1128"qRemove this unused import 'com.authorizationserverapi.authorizationserverapi.repository.AuthorizationRepository'.(Ü¿¬½ýÿÿÿÿ8Æ‹û¬Õ1
+‡
+java:S1128"jRemove this unused import 'com.authorizationserverapi.authorizationserverapi.repository.ClientRepository'.(Ã’‹Õ8¯øñÒÕ1
+
+java:S1128"{Remove this unused import 'com.authorizationserverapi.authorizationserverapi.service.JpaOAuth2AuthorizationConsentService'.( …çóùÿÿÿÿ8Æ‹û¬Õ1
+‘
+java:S1128"tRemove this unused import 'com.authorizationserverapi.authorizationserverapi.service.JpaOAuth2AuthorizationService'.(ä÷§­8Æ‹û¬Õ1
+‘
+java:S1128	"tRemove this unused import 'com.authorizationserverapi.authorizationserverapi.service.JpaRegisteredClientRepository'.(ç¶Ï°8¯øñÒÕ1
+}
+java:S1128"`Remove this unused import 'org.springframework.boot.autoconfigure.security.servlet.PathRequest'.(üÂè§8ÚÉë¬Õ1
+i
+java:S1128"GRemove this unused import 'org.springframework.jdbc.core.JdbcTemplate'.(å ê‹ÿÿÿÿÿ8¯øñÒÕ1
+
+java:S1128"rRemove this unused import 'org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer'.(Ç¼Î8ÚÉë¬Õ1
+
+java:S1128"mRemove this unused import 'org.springframework.security.config.annotation.web.configurers.HeadersConfigurer'.(„ˆ—Ûûÿÿÿÿ8ÚÉë¬Õ1
+{
+java:S1128"YRemove this unused import 'org.springframework.security.crypto.password.PasswordEncoder'.(‰¡ßáÿÿÿÿÿ8¯øñÒÕ1
+y
+java:S1128"\Remove this unused import 'org.springframework.security.oauth2.core.AuthorizationGrantType'.(£Úê°8¯øñÒÕ1
+|
+java:S1128"`Remove this unused import 'org.springframework.security.oauth2.core.ClientAuthenticationMethod'.(žìŠ=8°øñÒÕ1
+w
+java:S1128"URemove this unused import 'org.springframework.security.oauth2.core.oidc.OidcScopes'.(†è’øÿÿÿÿ8°øñÒÕ1
+˜
+java:S1128""{Remove this unused import 'org.springframework.security.oauth2.server.authorization.JdbcOAuth2AuthorizationConsentService'.(ú«Î8ÛÉë¬Õ1
+‘
+java:S1128#"tRemove this unused import 'org.springframework.security.oauth2.server.authorization.JdbcOAuth2AuthorizationService'.(ßåºÅ8ÛÉë¬Õ1
+™
+java:S1128$"wRemove this unused import 'org.springframework.security.oauth2.server.authorization.OAuth2AuthorizationConsentService'.(Û“à³øÿÿÿÿ8Ç‹û¬Õ1
+’
+java:S1128%"pRemove this unused import 'org.springframework.security.oauth2.server.authorization.OAuth2AuthorizationService'.(øç®øÿÿÿÿ8Ç‹û¬Õ1
+˜
+java:S1128&"{Remove this unused import 'org.springframework.security.oauth2.server.authorization.client.JdbcRegisteredClientRepository'.(ä˜Ê˜8ÛÉë¬Õ1
+
+java:S1128'"mRemove this unused import 'org.springframework.security.oauth2.server.authorization.client.RegisteredClient'.(ÃâŸŸûÿÿÿÿ8°øñÒÕ1
+™
+java:S1128("wRemove this unused import 'org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository'.(Ô·’úÿÿÿÿ8°øñÒÕ1
+
+java:S1128."mRemove this unused import 'org.springframework.security.oauth2.server.authorization.settings.ClientSettings'.(äËÜùøÿÿÿÿ8°øñÒÕ1
+
+java:S1128/"pRemove this unused import 'org.springframework.security.oauth2.server.authorization.settings.OAuth2TokenFormat'.(¨ÉÐ¸8°øñÒÕ1
+Ž
+java:S11280"lRemove this unused import 'org.springframework.security.oauth2.server.authorization.settings.TokenSettings'.(§¬¨ûûÿÿÿÿ8°øñÒÕ1
+O
+java:S11287"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8°øñÒÕ1
+Q
+java:S11288"/Remove this unused import 'java.time.Duration'.(ëá¯‰üÿÿÿÿ8°øñÒÕ1
+M
+java:S1128:"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8°øñÒÕ1
+M
+java:S1128<"+Remove this unused import 'java.util.UUID'.(ÀãÄ£úÿÿÿÿ8±øñÒÕ1
+L
+java:S1068A"*Remove this unused "LOGGER" private field.(˜¶ú‚øÿÿÿÿ8±øñÒÕ1
+R
+java:S1144Ž"4Remove this unused private "getRedirectUris" method.(˜‰§õ8±øñÒÕ1

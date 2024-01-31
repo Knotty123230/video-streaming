@@ -1,0 +1,14 @@
+
+X	java:S125 "<This block of commented-out lines of code should be removed.(æ‰Â²8¼†ÓÕ1
+v
+java:S1128"ZRemove this unused import 'com.authorizationserverapi.authorizationserverapi.entity.User'.(­ÁÑM8½†ÓÕ1
+€
+java:S1128"^Remove this unused import 'com.authorizationserverapi.authorizationserverapi.entity.UserRole'.(ÃËÚ™ÿÿÿÿÿ8½†ÓÕ1
+_
+java:S1128"=Remove this unused import 'jakarta.annotation.PostConstruct'.(û²ñüşÿÿÿÿ8½†ÓÕ1
+C
+java:S1128"&Remove this unused import 'java.util'.(Î€ŒÙ8½†ÓÕ1
+F
+java:S1068"*Remove this unused "LOGGER" private field.(©Æš[8½†ÓÕ1
+U
+java:S1068"3Remove this unused "passwordEncoder" private field.(£›Õÿÿÿÿÿ8¾†ÓÕ1
