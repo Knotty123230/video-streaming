@@ -8,6 +8,8 @@ import com.v1.videostreamingmicroservice.exception.StorageException;
 import com.v1.videostreamingmicroservice.util.Range;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.common.protocol.types.Field;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -24,6 +26,8 @@ import java.util.UUID;
 public class ChunkService {
     private final MinioStorageService storageService;
     private final RestTemplate restTemplate;
+    @Value("${file.metadata}")
+    private String path;
 
     private byte[] readChunk(UUID uuid, Range range, long fileSize) {
         long startPosition = range.getRangeStart();
@@ -46,7 +50,9 @@ public class ChunkService {
      * @return the chunk with metadata
      */
     public ChunkWithMetadata fetchChunk(UUID uuid, Range range) {
-        FileMetadataDTO fileMetadata = restTemplate.getForObject("http://localhost:9098/file-metadata-storage/api/" + uuid, FileMetadataDTO.class);
+        String url = path + "file-metadata-storage/api/" + uuid;
+        log.info(url);
+        FileMetadataDTO fileMetadata = restTemplate.getForObject(url, FileMetadataDTO.class);
         Optional<FileMetadataDTO> optionalFileMetadataDTO = Optional.ofNullable(fileMetadata);
         return new ChunkWithMetadata(fileMetadata, readChunk(uuid, range, optionalFileMetadataDTO.orElseThrow().size()));
     }

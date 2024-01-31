@@ -5,17 +5,6 @@ spring:
     multipart:
       max-file-size: 10000MB
       max-request-size: 10000MB
-  datasource:
-    url: jdbc:postgresql://db/authentication
-    username: postgres
-    password: pass
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    database: POSTGRESQL
-  elasticsearch:
-    uris: http://localhost:9200
   kafka:
     bootstrap-servers: localhost:29092
     producer:
@@ -28,6 +17,8 @@ spring:
             add:
               type:
                 headers: false
+file:
+  metadata: localhost:9098
 
 topic:
   send-order: video-streaming

@@ -12,6 +12,11 @@ public class Range {
 
     private final long end;
 
+    public Range(long start, long end) {
+        this.start = start;
+        this.end = end;
+    }
+
     /**
      * Gets range start.
      *
@@ -22,7 +27,7 @@ public class Range {
     }
 
     /**
-     * Gets range end.
+     * Gets a range end.
      *
      * @param fileSize the file size
      * @return the range end
